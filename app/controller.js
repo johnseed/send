@@ -155,6 +155,9 @@ export default function(state, emitter) {
           file: ownedFile
         });
       }
+      let url = new URL(ownedFile.url);
+      url.protocol = window.location.protocol;
+      ownedFile.url = url.toString();
       state.modal = state.capabilities.share
         ? shareDialog(ownedFile.name, ownedFile.url)
         : copyDialog(ownedFile.name, ownedFile.url);
