@@ -28,7 +28,7 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-    - run: curl -O https://www.7-zip.org/a/7z2102-linux-x64.tar.xz && tar -xzvf 7z2102-linux-x64.tar.xz && mv 7z2102-linux-x64/7zz 7zz && chmod +x 7zz
+    - run: curl -O https://www.7-zip.org/a/7z2102-linux-x64.tar.xz && tar -xvf 7z2102-linux-x64.tar.xz && mv 7z2102-linux-x64/7zz 7zz && chmod +x 7zz
     - run: ./7zz a -mx9 node_modules.7z node_modules/
     
     
